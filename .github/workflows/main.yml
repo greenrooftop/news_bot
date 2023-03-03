@@ -22,3 +22,6 @@ jobs:
                   python "program.py"
               env: # Or as an environment variable
                   SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+            - name: 'Create env file'
+              run: |
+                   echo "${{ secrets.ENV_FILE }}" > .env
