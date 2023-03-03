@@ -8,9 +8,9 @@ jobs:
     build:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v3
+            - uses: actions/checkout@v1
             - name: Set up Python 3.x
-              uses: actions/setup-python@v4
+              uses: actions/setup-python@v1
               with:
                   python-version: "3.9"
             - name: Install dependencies
@@ -22,6 +22,3 @@ jobs:
                   python "program.py"
               env: # Or as an environment variable
                   SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-            - name: 'Create env file'
-              run: |
-                   echo "${{ secrets.ENV_FILE }}" > .env
